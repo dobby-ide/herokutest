@@ -1,7 +1,7 @@
 const express = require('express');
 const port = process.env.PORT || 8080;
 const app = express();
-var mysql = require('sql');
+var mysql = require('mysql');
 const db = [{ name: 'tiina' }, { name: 'jack' }];
 var dbConnection = mysql.createConnection({
   host: process.env.host,

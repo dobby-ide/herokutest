@@ -1,5 +1,6 @@
 const express = require('express');
 const port = process.env.PORT || 8080;
+require('dotenv').config();
 const app = express();
 var mysql = require('mysql');
 const db = [{ name: 'tiina' }, { name: 'jack' }];
@@ -16,7 +17,7 @@ app.get('/names', (req, res) => {
 
 var connection = mysql.createConnection(dbConnection);
 app.get('/', (req, res) => {
-  connection.query('SELECT * from location', (error, results) => {
+  dbConnection.query('SELECT * from locations', (error, results) => {
     if (error) {
       console.log(error);
     } else {
